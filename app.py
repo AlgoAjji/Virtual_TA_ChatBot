@@ -747,12 +747,12 @@ async def health_check():
         )
 
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@app.get("/")
-async def serve_home():
-    return FileResponse("static/index.html")
+# @app.get("/")
+# async def serve_home():
+#     return FileResponse("static/index.html")
 
 
 if __name__ == "__main__":
