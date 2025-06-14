@@ -44,7 +44,7 @@ Open two terminal windows:
 🖥️ Terminal 1: Start FastAPI Server
 ```bash
 
-uvicorn main:app --reload
+uvicorn app:app --reload
 This runs the FastAPI backend on http://127.0.0.1:8000
 
 🧪 Terminal 2: Run Prompt Evaluation
