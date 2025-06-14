@@ -1,72 +1,76 @@
-# TDS Data Repository
+# 🎓 TDS Virtual TA
 
-**WARNING: Use this data at your own risk. Ensure all the data is correct and how you want it. There is no guarantee on the completeness and correctness of the data.**
+This project is a Virtual Teaching Assistant designed to support the **TDS (Tools for Data Science)** course of the **IIT Madras  BS Degree** program. It leverages FastAPI for backend services and integrates `promptfoo` for evaluation and testing of prompts.
 
-## Overview
+## 📂 Repository
 
-This repository contains raw data sources scraped from two sources:
-1. [TDS 2025-01](https://tds.s-anand.net/#/2025-01/)
-2. [TDS Knowledge Base on Discourse](https://discourse.onlinedegree.iitm.ac.in/c/courses/tds-kb/34)
+GitHub: [https://github.com/23f2000288/tds_virtual_ta.git](https://github.com/23f2000288/tds_virtual_ta.git)
 
-The data includes:
-- **Discourse Posts**: JSON files representing the topic post streams exported from the Discourse JSON API endpoint.
-- **Website Pages**: Markdown files generated from the HTML pages of the TDS 2025-01 website.
+---
 
-## Data Structure
+## ⚙️ Setup Instructions
 
-- **discourse_posts.json**: A single JSON file containing all the Discourse posts.
-- **discourse_json/**: A directory containing individual JSON files for each topic post stream.
-- **tds_pages_md/**: A directory containing Markdown files for each page scraped from the TDS 2025-01 website.
+Follow these steps to get the project running locally:
 
-## Installation
+### 1. Clone the Repository
 
-1. **Clone the Repository**
+```bash
+git clone https://github.com/23f2000288/tds_virtual_ta.git
+cd tds_virtual_ta
+2. Create and Activate a Virtual Environment
 
-   ```bash
-   git clone https://github.com/23f3004008/TDS-Project1-Data.git
-   cd TDS-Project1-Data
-   ```
+# For Windows
+python -m venv venv
+venv\Scripts\activate
 
-2. **Install Dependencies**
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+3. Install Required Dependencies
+```bash
+pip install -r requirements.txt
+```
+## 4. Set Up Environment Variables
+Create a .env file in the project root and add your API keys. For example:
 
-   Ensure you have Python installed, then run:
+```bash
+API_KEY=your_openai_api_key_here
+Make sure .env is not committed to version control (already included in .gitignore).
+```
+### 🚀 Running the Project
+Open two terminal windows:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+🖥️ Terminal 1: Start FastAPI Server
+```bash
 
-## Usage
+uvicorn main:app --reload
+This runs the FastAPI backend on http://127.0.0.1:8000
 
-### Downloading Data
+🧪 Terminal 2: Run Prompt Evaluation
+bash
 
-To download the data, you can use the provided Python scripts:
+npx promptfoo eval --config test.yaml --no-cache
+This command evaluates prompts against the backend server using the configuration in test.yaml.
 
-- **Discourse Posts**
+📁 Project Structure
+```bash
 
-  ```bash
-  python discourse_downloader_full.py
-  ```
+tds_virtual_ta/
+├── app.py               # FastAPI app entry point
+├── requirements.txt      # Python dependencies
+├── .env                  # Environment variables (not committed)
+├── test.yaml             # Promptfoo evaluation config
+└── ...                   # Additional scripts and modules
+🧠 Features
+Query answering based on scraped Discourse content
 
-- **Website Pages**
+API-based architecture using FastAPI
 
-  ```bash
-  python website_downloader_full.py
-  ```
+Prompt evaluation and testing using promptfoo
 
-### Viewing Data
+🤝 Contributions
+Feel free to fork the repository, raise issues, or submit pull requests!
 
-- **Discourse Posts**
-
-  The `discourse_posts.json` file contains all the Discourse posts. You can view this file directly or use a JSON viewer.
-
-- **Website Pages**
-
-  The Markdown files in the `tds_pages_md/` directory can be opened in any text editor or Markdown viewer.
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+📄 License
+This project is open-source and available under the MIT License.
