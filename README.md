@@ -9,7 +9,7 @@ GitHub: [https://github.com/23f2000288/tds_virtual_ta.git](https://github.com/23
 ---
 ## 📂 Application hosted
 
-GitHub: [https://tds-virtual-ta-zvjo.onrender.com/](https://tds-virtual-ta-zvjo.onrender.com/)
+Render: [https://tds-virtual-ta-zvjo.onrender.com/](https://tds-virtual-ta-zvjo.onrender.com/)
 
 ---
 
