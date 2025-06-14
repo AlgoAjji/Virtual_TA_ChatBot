@@ -7,6 +7,11 @@ This project is a Virtual Teaching Assistant designed to support the **TDS (Tool
 GitHub: [https://github.com/23f2000288/tds_virtual_ta.git](https://github.com/23f2000288/tds_virtual_ta.git)
 
 ---
+## 📂 Application hosted
+
+GitHub: [https://tds-virtual-ta-zvjo.onrender.com/](https://tds-virtual-ta-zvjo.onrender.com/)
+
+---
 
 ## ⚙️ Setup Instructions
 
@@ -69,8 +74,13 @@ API-based architecture using FastAPI
 
 Prompt evaluation and testing using promptfoo
 
+
+
 🤝 Contributions
 Feel free to fork the repository, raise issues, or submit pull requests!
 
 📄 License
 This project is open-source and available under the MIT License.
+
+
+
