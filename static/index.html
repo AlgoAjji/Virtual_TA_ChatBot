@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Virtual TA Chatbot 🗣</title>
+  <title>Virtual TA Chatbot 🗣 🤖</title>
   <style>
     /* Reset some basic elements */
     * {
@@ -110,9 +110,9 @@
     <input type="file" id="imageInput" accept="image/*">
 
     <div class="controls">
-      <button type="button" id="voiceBtn">痔 Speak</button>
+      <button type="button" id="voiceBtn">🗣🎤 Speak</button>
       <button type="submit">Ask</button>
-      <button type="button" id="refreshBtn">売 Refresh</button>
+      <button type="button" id="refreshBtn">🔃 Refresh</button>
     </div>
   </form>
 
@@ -129,11 +129,11 @@
       recognizer = new SpeechRec();
       recognizer.lang = 'en-GB'; // Changed to en-GB for UK English
       recognizer.interimResults = false;
-      recognizer.onstart = () => { voiceBtn.textContent = '閥 Listening...'; };
+      recognizer.onstart = () => { voiceBtn.textContent = '👂🏼🔴 Listening...'; };
       recognizer.onresult = e => {
         questionEl.value = e.results[0][0].transcript;
       };
-      recognizer.onend = () => { voiceBtn.textContent = '痔 Speak'; };
+      recognizer.onend = () => { voiceBtn.textContent = '🗣🎤 Speak'; };
       voiceBtn.addEventListener('click', () => recognizer.start());
     } else {
       voiceBtn.disabled = true;
