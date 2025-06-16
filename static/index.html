@@ -12,17 +12,17 @@
       padding: 0;
     }
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #fff8f0;
-      color: #333;
-      padding: 1rem;
+  font-family: "Times New Roman", serif;
+  line-height: 1.6;
+  background-color: #ccffcc; /* light neon green */
+  color: #1a1a1a;
+  padding: 1rem;
     }
     h1 {
       text-align: center;
       margin-bottom: 1rem;
       font-size: 2rem;
-      color: #d35400;
+      color: #333300;
     }
     form {
       max-width: 600px;
@@ -37,7 +37,7 @@
       font-weight: bold;
       display: block;
       margin-bottom: 0.5rem;
-      color: #e67e22;
+      color: #fff44f;
     }
     textarea {
       width: 100%;
@@ -59,7 +59,7 @@
     }
     .controls button {
       flex: 1;
-      background-color: #e67e22;
+      background-color: #fff44f;
       color: #fff;
       border: none;
       padding: 0.75rem;
@@ -69,13 +69,13 @@
       transition: background-color 0.2s;
     }
     .controls button:hover {
-      background-color: #d35400;
+      background-color: #ccffcc;
     }
     h2 {
       text-align: center;
       margin-bottom: 1rem;
       font-size: 1.5rem;
-      color: #d35400;
+      color: #ccffcc;
     }
     #answerOutput {
       max-width: 600px;
@@ -106,7 +106,7 @@
     <input type="file" id="imageInput" accept="image/*">
 
     <div class="controls">
-      <button type="button" id="voiceBtn">🎤 Speak</button>
+      <button type="button" id="voiceBtn">🗣️🎤 Speak</button>
       <button type="submit">Ask</button>
       <button type="button" id="refreshBtn">🔄 Refresh</button>
     </div>
@@ -129,7 +129,7 @@
       recognizer.onresult = e => {
         questionEl.value = e.results[0][0].transcript;
       };
-      recognizer.onend = () => { voiceBtn.textContent = '🎤 Speak'; };
+      recognizer.onend = () => { voiceBtn.textContent = '🗣️🎤 Speak'; };
       voiceBtn.addEventListener('click', () => recognizer.start());
     } else {
       voiceBtn.disabled = true;
